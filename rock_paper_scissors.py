@@ -99,6 +99,16 @@ import time
 
 def greeting():
     """Greets player, returns username"""
+    # Game setup:  
+    INSTRUCTIONS = """
+    Please choose one of the following:
+    >>> [R]ock  
+    >>> [P]aper
+    >>> [S]cissors
+
+    Best out of three wins.
+    Are you ready?!
+    """
     
     print("Challenger, please enter your name: ")
     username = input("> ")
@@ -339,7 +349,7 @@ def main_loop(username, rounds):
         if (user_choice.startswith("R") or user_choice.startswith("S") or user_choice.startswith("P")) and (comp_choice.startswith("R") or comp_choice.startswith("S") or comp_choice.startswith("P")):
             rounds +=1
 
-
+rps = ["Rock", "Paper", "Scissors"]
 def play_game():
     """Starts the game"""
     print()
@@ -347,19 +357,6 @@ def play_game():
     print("- - " * 36)
     print()
 
-    # Game setup:  
-    INSTRUCTIONS = """
-    Please choose one of the following:
-    >>> [R]ock  
-    >>> [P]aper
-    >>> [S]cissors
-
-    Best out of three wins.
-    Are you ready?!
-    """
-
-    rps = ["Rock", "Paper", "Scissors"]
-    
     rounds = 1
 
     # greeting
@@ -371,11 +368,4 @@ def play_game():
     # asks player if they want to play again or quit game
     play_again(username, rounds)
                
-play_game()        
-
-
-        
-
-
-
-    
+play_game()
