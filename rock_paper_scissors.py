@@ -93,31 +93,9 @@ VS = """
      ███ ▐█▄▪▐█
     . ▀   ▀▀▀▀ 
 
- """
-
-###################
-               
+ """     
 import random 
 import time  
-                
-##################
-print()
-print(rockpaperscissor)
-print("- - " * 36)
-print()
-
-
-# Game setup:  
-INSTRUCTIONS = """
-    Please choose one of the following:
-    >>> [R]ock  
-    >>> [P]aper
-    >>> [S]cissors
-
-    Best out of three wins.
-    Are you ready?!
-    """
-    
 
 def greeting():
     """Greets player, returns username"""
@@ -134,13 +112,11 @@ def greeting():
     return username
 
 
-
 def player_choice():
     """Aks for user's choice and returns it """
    
     user_choice = input("> ")
     user_choice = user_choice.title()
-    
     print()
 
     return user_choice
@@ -156,9 +132,7 @@ def print_player_choice(user_choice, rounds):
         print("="*15)
         print()
         print("Player:")
-        print(rock)
-       
-        
+        print(rock) 
 
     elif user_choice == "P" or user_choice.startswith("P"):
         user_choice = "Paper"
@@ -167,9 +141,8 @@ def print_player_choice(user_choice, rounds):
         print("="*15)
         print()
         print("Player:")
-        print(paper)
-        
-        
+        print(paper) 
+
     elif user_choice == "S" or user_choice.startswith("S"):
         user_choice = "Scissor"
         print("="*15)
@@ -177,12 +150,9 @@ def print_player_choice(user_choice, rounds):
         print("="*15)
         print()
         print("Player:")
-        print(scissor)
-       
-    
+        print(scissor)  
     else:
-        print("Invalid response")
-        
+        print("Invalid response")       
             
 
 def computer_choice():
@@ -212,7 +182,6 @@ def print_computer_choice(user_choice, comp_choice):
 
     
 
-
 def versus(user_choice):
     """DISPLAYS VERSUS"""
     if not (user_choice.startswith("R") or user_choice.startswith("P") or user_choice.startswith("S")):
@@ -225,41 +194,24 @@ def versus(user_choice):
         print()
 
 
-
-# def inc_score(current_score):
-#     """Returns updated score increased each win"""
-
-#     current_score = current_score + 1
-#     return current_score
-
-
-
-
 def display_win():
     """Displays win statements"""
     win = ["You WIN!", "W I N N E R", "Winner winner chicken dinner!, Genius!"]
     print(random.choice(win))
     print(WIN)
 
+
 def display_draw():
     """displays draw statements"""
     print("It's a draw!")
     print(TIE)
+
 
 def display_lose():
     """Displays lose statements"""
     lose = ["You LOSE!", "L O S E R ", "Better luck next time."]
     print(random.choice(lose))
     print(LOSE)
-
-
-# SCORE/POINTS SYSTEM 
-# def display_scores(user_score, comp_score):
-#     """ Displays user/comp scores"""
-#     print()
-#     print("Player score:", user_score)
-#     print("Computer:", comp_score)
-
 
 
 def rps_scoring(user_choice, comp_choice):
@@ -277,9 +229,6 @@ def rps_scoring(user_choice, comp_choice):
     elif user_choice == "S" and comp_choice == "Rock":
         display_lose()
         
-
-       
-  
     # DRAW
     elif user_choice == "P" and comp_choice == "Paper":
         display_draw()
@@ -291,9 +240,7 @@ def rps_scoring(user_choice, comp_choice):
     # Paper < Scissors : LOSE
     elif user_choice == "P" and comp_choice == "Scissors":
         display_lose()
-       
-
-        
+           
     # DRAW
     elif user_choice =="R" and comp_choice =="Rock":
         display_draw()
@@ -305,7 +252,6 @@ def rps_scoring(user_choice, comp_choice):
     # Rock > Scissors : WIN 
     elif user_choice =="R" and comp_choice =="Scissors":
         display_win()
-
 
 
 def play_again(username, rounds):
@@ -358,16 +304,11 @@ def play_again(username, rounds):
             print("Sorry, I didn't understand that.")
             print()
             print()
-            print()
-            
+            print()          
     
 
 def main_loop(username, rounds):
     """ Game loop """
-
-    # user_score = 0
-    # comp_score = 0
-    # rounds = 1
 
     # repeat game for three rounds
     while rounds <=3:
@@ -398,12 +339,26 @@ def main_loop(username, rounds):
         if (user_choice.startswith("R") or user_choice.startswith("S") or user_choice.startswith("P")) and (comp_choice.startswith("R") or comp_choice.startswith("S") or comp_choice.startswith("P")):
             rounds +=1
 
-  
-               
-rps = ["Rock", "Paper", "Scissors"]
 
 def play_game():
     """Starts the game"""
+    print()
+    print(rockpaperscissor)
+    print("- - " * 36)
+    print()
+
+    # Game setup:  
+    INSTRUCTIONS = """
+    Please choose one of the following:
+    >>> [R]ock  
+    >>> [P]aper
+    >>> [S]cissors
+
+    Best out of three wins.
+    Are you ready?!
+    """
+
+    rps = ["Rock", "Paper", "Scissors"]
     
     rounds = 1
 
